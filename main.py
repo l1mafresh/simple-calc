@@ -54,10 +54,8 @@ class CalcApp(QtWidgets.QMainWindow):
         try:
             res = eval(self.ui.line_result.text())
             self.ui.line_result.setText(str(res))
-        except (SyntaxError, NameError):
+        except (SyntaxError, NameError, ZeroDivisionError):
             QMessageBox.warning(self, "Error", "Incorrect expression")
-        except ZeroDivisionError:
-            QMessageBox.warning(self, "Error", "Cannot be divided by zero")
 
     # Clear result line
     def clear_line_result(self):
@@ -91,7 +89,7 @@ class CalcApp(QtWidgets.QMainWindow):
 
     # Show window with info about program
     def show_about_message(self):
-        QMessageBox.information(self, "Simple Calc",
+        QMessageBox.information(self, "Simple calc",
                                 "Calc, writed \non Python and PyQt6.\n(c) limafresh")
 
     # Change theme

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Simple Calc</string>
+   <string>Simple calc</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -277,7 +277,17 @@ background-color: rgb(255, 170, 0);</string>
 background-color: rgb(0, 170, 255);</string>
         </property>
         <property name="text">
-         <string>🠔</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>undo-icon.png</normaloff>undo-icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -428,6 +438,9 @@ background-color: rgb(255, 170, 0);</string>
          <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
         </property>
+        <property name="text">
+         <string>0</string>
+        </property>
        </widget>
       </item>
       <item row="1" column="0" colspan="2">
@@ -479,9 +492,9 @@ color: rgb(0, 0, 0);</string>
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_theme">
+   <widget class="QMenu" name="menu_style">
     <property name="title">
-     <string>Theme</string>
+     <string>Style</string>
     </property>
     <addaction name="act_system"/>
     <addaction name="act_light"/>
@@ -496,7 +509,7 @@ color: rgb(0, 0, 0);</string>
     </property>
     <addaction name="act_info"/>
    </widget>
-   <addaction name="menu_theme"/>
+   <addaction name="menu_style"/>
    <addaction name="menu_info"/>
   </widget>
   <action name="act_info">
@@ -506,7 +519,7 @@ color: rgb(0, 0, 0);</string>
   </action>
   <action name="act_system">
    <property name="text">
-    <string>System</string>
+    <string>System Qt Style</string>
    </property>
   </action>
   <action name="act_light">
