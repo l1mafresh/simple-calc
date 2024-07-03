@@ -13,6 +13,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(358, 386)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -175,9 +178,9 @@ class Ui_MainWindow(object):
         self.btn_del.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 170, 255);")
         self.btn_del.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("undo-icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_del.setIcon(icon)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("undo-icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_del.setIcon(icon1)
         self.btn_del.setIconSize(QtCore.QSize(32, 32))
         self.btn_del.setObjectName("btn_del")
         self.gridLayout.addWidget(self.btn_del, 2, 3, 1, 1)

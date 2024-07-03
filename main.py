@@ -1,4 +1,4 @@
-import sys, os
+import sys
 from math import*
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
@@ -12,8 +12,7 @@ class CalcApp(QtWidgets.QMainWindow):
         self.init_UI()
 
     def init_UI(self):
-        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.png")))
-
+        
         buttons = {
             "btn_0": "0", "btn_1": "1", "btn_2": "2", "btn_3": "3",
             "btn_4": "4", "btn_5": "5", "btn_6": "6", "btn_7": "7",
