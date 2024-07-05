@@ -51,6 +51,7 @@ class CalcApp(QtWidgets.QMainWindow):
     # Calculate
     def calculate(self):
         try:
+            compile(expression, '<string>', 'eval')
             res = eval(self.ui.line_result.text())
             self.ui.line_result.setText(str(res))
         except (SyntaxError, NameError, ZeroDivisionError):
@@ -63,6 +64,7 @@ class CalcApp(QtWidgets.QMainWindow):
     # Root extraction
     def radical(self):
         try:
+            compile(expression, '<string>', 'eval')
             res = eval(self.ui.line_result.text())
             if res >= 0:
                 self.ui.line_result.setText(str(sqrt(res)))
@@ -75,6 +77,7 @@ class CalcApp(QtWidgets.QMainWindow):
     # Square
     def square(self):
         try:
+            compile(expression, '<string>', 'eval')
             res = eval(self.ui.line_result.text())
             self.ui.line_result.setText(str(res*res))
         except (SyntaxError, NameError):
