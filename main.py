@@ -35,6 +35,7 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.btn_del.clicked.connect(self.del_text)
         self.ui.btn_equal.clicked.connect(self.calculate)
         self.ui.btn_square.clicked.connect(self.square)
+        self.ui.btn_equal_2.clicked.connect(self.calculate)
 
         self.ui.btn_log.clicked.connect(self.log)
         self.ui.btn_sin.clicked.connect(self.sin)
@@ -43,7 +44,6 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.btn_exp.clicked.connect(self.exp)
         self.ui.btn_pi.clicked.connect(self.pi)
         self.ui.btn_e.clicked.connect(self.e)
-        #self.ui.btn_pow.clicked.connect(self.pow)
         self.ui.btn_procent.clicked.connect(self.procent)
 
         self.ui.act_system.triggered.connect(self.system_theme)
