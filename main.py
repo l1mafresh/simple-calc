@@ -78,8 +78,10 @@ class CalcApp(QtWidgets.QMainWindow):
     # Calculate
     def calculate(self):
         try:
-            res = eval(self.ui.line_result.text())
+            expression =  self.ui.line_result.text()
+            res = eval(expression)
             self.ui.line_result.setText(str(res))
+            self.ui.textEdit.append(f"{expression} = {res}")
         except:
             self.error()
 
