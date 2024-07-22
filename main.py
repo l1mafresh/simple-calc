@@ -18,24 +18,26 @@ class CalcApp(QtWidgets.QMainWindow):
             "btn_8": "8", "btn_9": "9", "btn_dot": ".",
             "btn_plus": "+", "btn_minus": "-",
             "btn_multiple": "*", "btn_divide": "/",
+            "btn_leftbracket": "(", "btn_rightbracket": ")",
             "btn_0_2": "0", "btn_1_2": "1", "btn_2_2": "2",
             "btn_3_2": "3", "btn_4_2": "4", "btn_5_2": "5",
             "btn_6_2": "6", "btn_7_2": "7", "btn_8_2": "8",
             "btn_9_2": "9", "btn_dot_2": ".",
             "btn_plus_2": "+", "btn_minus_2": "-",
             "btn_multiple_2": "*", "btn_divide_2": "/",
-            "btn_leftbracket": "(", "btn_rightbracket": ")"
+            "btn_leftbracket_2": "(", "btn_rightbracket_2": ")"
         }
 
         for btn_name, symbol in buttons.items():
             getattr(self.ui, btn_name).clicked.connect(lambda _, s=symbol: self.write_number(s))
         
-        self.ui.btn_radical.clicked.connect(self.radical)
         self.ui.btn_clear.clicked.connect(self.clear_line_result)
         self.ui.btn_del.clicked.connect(self.del_text)
         self.ui.btn_equal.clicked.connect(self.calculate)
-        self.ui.btn_square.clicked.connect(self.square)
+        self.ui.btn_clear_2.clicked.connect(self.clear_line_result)
+        self.ui.btn_del_2.clicked.connect(self.del_text)
         self.ui.btn_equal_2.clicked.connect(self.calculate)
+        self.ui.btn_equal_3.clicked.connect(self.calculate)
 
         self.ui.btn_log.clicked.connect(self.log)
         self.ui.btn_sin.clicked.connect(self.sin)
@@ -45,6 +47,8 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.btn_pi.clicked.connect(self.pi)
         self.ui.btn_e.clicked.connect(self.e)
         self.ui.btn_procent.clicked.connect(self.procent)
+        self.ui.btn_square.clicked.connect(self.square)
+        self.ui.btn_radical.clicked.connect(self.radical)
 
         self.ui.act_system.triggered.connect(self.system_theme)
         self.ui.act_light.triggered.connect(self.light_theme)
@@ -54,8 +58,11 @@ class CalcApp(QtWidgets.QMainWindow):
         
         self.ui.actionStandard.triggered.connect(self.switch_to_standard)
         self.ui.actionEngineer.triggered.connect(self.switch_to_engineer)
+        self.ui.actionPaper.triggered.connect(self.switch_to_paper)
         
         self.ui.act_info.triggered.connect(self.show_about_message)
+
+        self.ui.line_result.returnPressed.connect(self.calculate)
 
     # Enter numbers in a line with buttons
     def write_number(self, number):
@@ -79,26 +86,6 @@ class CalcApp(QtWidgets.QMainWindow):
     # Clear result line
     def clear_line_result(self):
         self.ui.line_result.setText("0")
-
-    # Root extraction
-    def radical(self):
-        try:
-            res = eval(self.ui.line_result.text())
-            if res >= 0:
-                self.ui.line_result.setText(str(sqrt(res)))
-            else:
-                QMessageBox.warning(self, "Error",
-                                    "It is not possible to extract the root from a negative value")
-        except:
-            self.error()
-
-    # Square
-    def square(self):
-        try:
-            res = eval(self.ui.line_result.text())
-            self.ui.line_result.setText(str(res*res))
-        except:
-            self.error()
 
     # Delete last symbol
     def del_text(self):
@@ -161,6 +148,22 @@ class CalcApp(QtWidgets.QMainWindow):
             self.ui.line_result.setText(str(res/100))
         except:
             self.error()
+    def radical(self):
+        try:
+            res = eval(self.ui.line_result.text())
+            if res >= 0:
+                self.ui.line_result.setText(str(sqrt(res)))
+            else:
+                QMessageBox.warning(self, "Error",
+                                    "It is not possible to extract the root from a negative value")
+        except:
+            self.error()
+    def square(self):
+        try:
+            res = eval(self.ui.line_result.text())
+            self.ui.line_result.setText(str(res*res))
+        except:
+            self.error()
             
     # Error
     def error(self):
@@ -185,6 +188,8 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page)
     def switch_to_engineer(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
+    def switch_to_paper(self):
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
 
     # Show window with info about program
     def show_about_message(self):

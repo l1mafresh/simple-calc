@@ -1,5 +1,5 @@
 # Simple calc
-A simple calculator written in PyQt 6. Supports light, dark and system Qt themes, as well as transparency (transparency may not work on some OSes).
+A simple calculator written in PyQt 6. Supports standard, engineering and paper modes; light, dark and system Qt themes, as well as transparency (transparency may not work on some OS).
 
 ![Screenshot](https://github.com/l1mafresh/simple-calc/blob/main/screenshot.png)
 
