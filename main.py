@@ -188,10 +188,13 @@ class CalcApp(QtWidgets.QMainWindow):
     # Change mode
     def switch_to_standard(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page)
+        self.ui.textEdit.clear()
     def switch_to_engineer(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
+        self.ui.textEdit.clear()
     def switch_to_paper(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
+        self.ui.line_result.clear()
 
     # Show window with info about program
     def show_about_message(self):
