@@ -12,7 +12,6 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(462, 431)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -664,10 +663,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.btn_equal_3.sizePolicy().hasHeightForWidth())
         self.btn_equal_3.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(20)
         self.btn_equal_3.setFont(font)
         self.btn_equal_3.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.btn_equal_3.setStyleSheet("text-align: right;")
+        self.btn_equal_3.setStyleSheet("")
         self.btn_equal_3.setObjectName("btn_equal_3")
         self.verticalLayout.addWidget(self.btn_equal_3)
         self.label = QtWidgets.QLabel(parent=self.page_3)
@@ -788,7 +786,7 @@ class Ui_MainWindow(object):
         self.btn_clear_2.setText(_translate("MainWindow", "C"))
         self.btn_leftbracket_2.setText(_translate("MainWindow", "("))
         self.btn_rightbracket_2.setText(_translate("MainWindow", ")"))
-        self.btn_equal_3.setText(_translate("MainWindow", "="))
+        self.btn_equal_3.setText(_translate("MainWindow", "Calculate"))
         self.label.setText(_translate("MainWindow", "Journal:"))
         self.menu_style.setTitle(_translate("MainWindow", "Style"))
         self.menu_info.setTitle(_translate("MainWindow", "Info"))

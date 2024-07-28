@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>462</width>
-    <height>431</height>
-   </rect>
-  </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
@@ -1092,7 +1084,6 @@ background-color: rgb(0, 170, 255);</string>
             </property>
             <property name="font">
              <font>
-              <pointsize>20</pointsize>
               <hintingpreference>PreferDefaultHinting</hintingpreference>
              </font>
             </property>
@@ -1100,10 +1091,10 @@ background-color: rgb(0, 170, 255);</string>
              <enum>Qt::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">text-align: right;</string>
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string>=</string>
+             <string>Calculate</string>
             </property>
            </widget>
           </item>
