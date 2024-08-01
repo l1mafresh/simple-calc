@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>462</width>
+    <height>384</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
@@ -12,8 +20,7 @@
    <string>Simple calc</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>icon.png</normaloff>icon.png</iconset>
+   <iconset theme="accessories-calculator"/>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -329,8 +336,7 @@ background-color: rgb(0, 170, 255);</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>undo-icon.png</normaloff>undo-icon.png</iconset>
+             <iconset theme="edit-clear"/>
             </property>
             <property name="iconSize">
              <size>
@@ -1055,8 +1061,7 @@ background-color: rgb(0, 170, 255);</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>undo-icon.png</normaloff>undo-icon.png</iconset>
+             <iconset theme="edit-clear"/>
             </property>
             <property name="iconSize">
              <size>

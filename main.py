@@ -1,4 +1,6 @@
 import sys
+import os
+import platform
 from math import*
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
@@ -10,6 +12,10 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.init_UI()
+        if platform.system() != "Linux":
+            self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.png")))
+            self.ui.btn_del.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
+            self.ui.btn_del_2.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
 
     def init_UI(self):     
         buttons = {

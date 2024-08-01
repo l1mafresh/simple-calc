@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(462, 384)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon = QtGui.QIcon.fromTheme("accessories-calculator")
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -209,9 +209,8 @@ class Ui_MainWindow(object):
         self.btn_del.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 170, 255);")
         self.btn_del.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("undo-icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btn_del.setIcon(icon1)
+        icon = QtGui.QIcon.fromTheme("edit-clear")
+        self.btn_del.setIcon(icon)
         self.btn_del.setIconSize(QtCore.QSize(32, 32))
         self.btn_del.setObjectName("btn_del")
         self.gridLayout_3.addWidget(self.btn_del, 0, 3, 1, 1)
@@ -644,7 +643,8 @@ class Ui_MainWindow(object):
         self.btn_del_2.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 170, 255);")
         self.btn_del_2.setText("")
-        self.btn_del_2.setIcon(icon1)
+        icon = QtGui.QIcon.fromTheme("edit-clear")
+        self.btn_del_2.setIcon(icon)
         self.btn_del_2.setIconSize(QtCore.QSize(32, 32))
         self.btn_del_2.setObjectName("btn_del_2")
         self.gridLayout_5.addWidget(self.btn_del_2, 1, 4, 1, 1)
