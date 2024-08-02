@@ -1,9 +1,8 @@
 import sys
 import os
-import platform
 from math import*
+from platform import system
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMessageBox
 from ui import Ui_MainWindow
 
 class CalcApp(QtWidgets.QMainWindow):
@@ -12,7 +11,7 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.init_UI()
-        if platform.system() != "Linux":
+        if system() != "Linux":
             self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.png")))
             self.ui.btn_del.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
             self.ui.btn_del_2.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
@@ -59,8 +58,7 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.act_system.triggered.connect(self.system_theme)
         self.ui.act_light.triggered.connect(self.light_theme)
         self.ui.act_dark.triggered.connect(self.dark_theme)
-        self.ui.act_on_trans.triggered.connect(self.on_transparent)
-        self.ui.act_off_trans.triggered.connect(self.off_transparent)
+        self.ui.act_on_trans.triggered.connect(self.transparent)
         
         self.ui.actionStandard.triggered.connect(self.switch_to_standard)
         self.ui.actionEngineer.triggered.connect(self.switch_to_engineer)
@@ -69,6 +67,8 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui.act_info.triggered.connect(self.show_about_message)
 
         self.ui.line_result.returnPressed.connect(self.calculate)
+
+        self.is_transparent = False
 
     # Enter numbers in a line with buttons
     def write_number(self, number):
@@ -162,7 +162,7 @@ class CalcApp(QtWidgets.QMainWindow):
             if res >= 0:
                 self.ui.line_result.setText(str(sqrt(res)))
             else:
-                QMessageBox.warning(self, "Error",
+                QtWidgets.QMessageBox.warning(self, "Error",
                                     "It is not possible to extract the root from a negative value")
         except:
             self.error()
@@ -175,7 +175,7 @@ class CalcApp(QtWidgets.QMainWindow):
             
     # Error
     def error(self):
-        QMessageBox.warning(self, "Error", "Incorrect expression")
+        QtWidgets.QMessageBox.warning(self, "Error", "Incorrect expression")
 
     # Change style
     def change_theme(self, bg_color, text_color):
@@ -186,11 +186,13 @@ class CalcApp(QtWidgets.QMainWindow):
         self.change_theme("white", "black")
     def dark_theme(self):
         self.change_theme("black", "white")
-    def on_transparent(self):
-        self.setWindowOpacity(0.7)
-    def off_transparent(self):
-        self.setWindowOpacity(1)
-
+    def transparent(self):
+        self.is_transparent = not self.is_transparent
+        if self.is_transparent:
+            self.setWindowOpacity(0.7)
+        else:
+            self.setWindowOpacity(1)
+        
     # Change mode
     def switch_to_standard(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page)
@@ -204,8 +206,8 @@ class CalcApp(QtWidgets.QMainWindow):
 
     # Show window with info about program
     def show_about_message(self):
-        QMessageBox.information(self, "Simple calc",
-                                "Calc, writed \non Python and PyQt6.\n(c) limafresh")
+        QtWidgets.QMessageBox.information(self, "Simple calc",
+                                "Calc, writed \non Python and PyQt6.\n(ɔ) limafresh")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

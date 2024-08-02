@@ -1148,7 +1148,6 @@ background-color: rgb(0, 170, 255);</string>
     <addaction name="act_dark"/>
     <addaction name="separator"/>
     <addaction name="act_on_trans"/>
-    <addaction name="act_off_trans"/>
    </widget>
    <widget class="QMenu" name="menu_info">
     <property name="title">
@@ -1169,6 +1168,9 @@ background-color: rgb(0, 170, 255);</string>
    <addaction name="menu_info"/>
   </widget>
   <action name="act_info">
+   <property name="icon">
+    <iconset theme="help-about"/>
+   </property>
    <property name="text">
     <string>About</string>
    </property>
@@ -1205,7 +1207,7 @@ background-color: rgb(0, 170, 255);</string>
   </action>
   <action name="act_on_trans">
    <property name="text">
-    <string>On transparency</string>
+    <string>On/Off transparency</string>
    </property>
   </action>
   <action name="act_off_trans">
