@@ -1,7 +1,5 @@
 import sys
-import os
 from math import*
-from platform import system
 from PyQt6 import QtCore, QtGui, QtWidgets
 from ui import Ui_MainWindow
 
@@ -11,10 +9,10 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.init_UI()
-        if system() != "Linux":
-            self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "icon.png")))
-            self.ui.btn_del.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
-            self.ui.btn_del_2.setIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "undo-icon.png")))
+        if not sys.platform.startswith("linux"):
+            self.setWindowIcon(QtGui.QIcon("icon.png"))
+            self.ui.btn_del.setIcon(QtGui.QIcon("undo-icon.png"))
+            self.ui.btn_del_2.setIcon(QtGui.QIcon("undo-icon.png"))
 
     def init_UI(self):     
         buttons = {
