@@ -9,7 +9,7 @@ class CalcApp(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.init_UI()
-        if not sys.platform.startswith("linux"):
+        if sys.platform != "linux":
             self.setWindowIcon(QtGui.QIcon("icon.png"))
             self.ui.btn_del.setIcon(QtGui.QIcon("undo-icon.png"))
             self.ui.btn_del_2.setIcon(QtGui.QIcon("undo-icon.png"))
