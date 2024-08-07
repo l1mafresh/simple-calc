@@ -5,4 +5,4 @@ A simple calculator written in PyQt 6. Supports standard, engineering and paper 
 
 ## Instructions 
 1. Install Python 3.11 (not sure about newer versions, but you can try; in theory it should) and PyQt 6. 
-2. Open the "main.py" file in Python IDLE and run it. There must be "ui.py", "icon.png" and "undo-icon.png" in the same folder, otherwise the program will not start.
+2. Open the "main.py" file in Python IDLE and run it.
