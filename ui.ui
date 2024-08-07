@@ -336,7 +336,7 @@ background-color: rgb(0, 170, 255);</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="edit-clear"/>
+             <iconset theme="edit-undo"/>
             </property>
             <property name="iconSize">
              <size>
@@ -1061,7 +1061,7 @@ background-color: rgb(0, 170, 255);</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="edit-clear"/>
+             <iconset theme="edit-undo"/>
             </property>
             <property name="iconSize">
              <size>
@@ -1190,29 +1190,9 @@ background-color: rgb(0, 170, 255);</string>
     <string>Dark</string>
    </property>
   </action>
-  <action name="act_grey">
-   <property name="text">
-    <string>Grey</string>
-   </property>
-  </action>
-  <action name="act_pink">
-   <property name="text">
-    <string>Pink</string>
-   </property>
-  </action>
-  <action name="act_gold">
-   <property name="text">
-    <string>Gold</string>
-   </property>
-  </action>
   <action name="act_on_trans">
    <property name="text">
     <string>On/Off transparency</string>
-   </property>
-  </action>
-  <action name="act_off_trans">
-   <property name="text">
-    <string>Off transparency</string>
    </property>
   </action>
   <action name="actionStandard">
